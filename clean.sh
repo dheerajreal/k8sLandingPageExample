@@ -5,19 +5,19 @@ cleanup_landingpage() {
     echo "Delete service and deployment"
     kubectl delete -f kube.yml
 
-    echo "remove image from minikube"
+    echo "Remove image from minikube"
     minikube image rm landingpagetest
 
-    echo "stop minikube"
+    echo "Stop minikube"
     minikube stop
 
-    echo "remove container image"
+    echo "Remove container image"
     docker rmi landingpagetest:latest
 
-    echo "cleanup files"
+    echo "Cleanup files"
     rm -rf ./aerial
 
-    echo "cleanup complete"
+    echo "Cleanup complete"
 }
 
 cleanup_landingpage
